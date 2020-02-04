@@ -1,0 +1,14 @@
+
+https://scotch.io/tutorials/build-a-crud-web-app-with-python-and-flask-part-one
+
+https://overiq.com/flask-101/application-structure-and-blueprint-in-flask/
+
+https://realpython.com/token-based-authentication-with-flask/
+https://github.com/realpython/flask-jwt-auth.git
+
+https://towardsdatascience.com/working-with-apis-using-flask-flask-restplus-and-swagger-ui-7cf447deda7f
+http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
+https://github.com/postrational/rest_api_demo
+
+https://books.google.dk/books/about/Mastering_Flask_Web_Development.html?id=ZOh1DwAAQBAJ&redir_esc=y
+
