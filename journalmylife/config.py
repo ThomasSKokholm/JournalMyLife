@@ -14,3 +14,5 @@ class Config:
 	SQLALCHEMY_DATABASE_URI = "mysql+pymysql://%s:%s@%s:3306/%s" % (DB_USER, DB_PASSWORD, DB_HOST, 'kitos')
 	
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+	BCRYPT_LOG_ROUNDS = 13
