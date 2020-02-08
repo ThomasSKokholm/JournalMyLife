@@ -3,7 +3,7 @@
 #
 import datetime
 
-from journal import app, db#, bcrypt
+from journalmylife.journal import app, db#, bcrypt
 
 class User(db.Model):
     """ User Model for keeping track of whos who """
@@ -20,7 +20,7 @@ class User(db.Model):
     # address = -> addresses.id
     birthday = db.Column(db.DateTime, nullable=False)
 
-    def __init__(self, email, password, admin=False, firstname, lastname, birthday):
+    def __init__(self, email, password, firstname, lastname, birthday, admin=False):
         self.email = email
         # TODO bcrypt in test/dev phase, need to change to better!
         self.password = bcrypt.generate_password_hash(password, app.config.get('BCRYPT_LOG_ROUNDS')).decode()
