@@ -31,4 +31,19 @@ class User(db.Model):
         self.birthday = birthday
 
 
+class Journal(db.Model):
+    """ Journal Model for the journals """
+    __tablename__ = "journals"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    journalcontent = db.Column(db.Text, nullable=False)
+    #journalowner = db.Column(db.User, nullable=False)
+    journalcreated = db.Column(db.DateTime, nullable=False)
+    journalstatus = db.Column(db.String(255, nullable=False)
+
+    def __init__(self, journalcontent, journalowner, journalcreated, journalstatus):
+        self.journalcreated = datetime.datetime.now()
+        self.journalcontent = journalcontent
+        #self.journalowner = currentUser()
+        self.journalstatus = journalstatus
 
