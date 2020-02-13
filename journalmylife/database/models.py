@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
+import jwt
 import datetime
 
 from journalmylife.journal import app, db#, bcrypt
@@ -29,6 +30,25 @@ class User(db.Model):
         self.firstname = firstname
         self.lastname = lastname
         self.birthday = birthday
+
+    def encode_auth_token(self, user_id):
+        """
+        Generate the Auth token
+        :return: string
+        """
+        try:
+            payload = {
+                'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, seconds=5),
+                'iat': datetime.datetime.utcnow(),
+                'sub': user_id
+            }
+            return jwt.encode(
+                payload,
+                app.config.get('SECRET_KEY'),
+                algorithm='HS256'
+            )
+        except Exception as e:
+            return e
 
 
 class Journal(db.Model):
