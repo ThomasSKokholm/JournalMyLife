@@ -10,12 +10,12 @@ from flask_migrate import Migrate, MigrateCommand
 
 COV = coverage.coverage(
     branch=True,
-    include="journal/*",
+    include="journalmylife/*",
     omit=[
-        "journal/tests/*",
-        "journal/config.py",
-        "journal/tests/*",
-        "journal/*/__init__.py",
+        "journalmylife/tests/*",
+        "journalmylife/config.py",
+        "journalmylife/tests/*",
+        "journalmylife/*/__init__.py",
     ],
 )
 
@@ -34,9 +34,12 @@ manager.add_command("db", MigrateCommand)
 @manager.command
 def test():
     """Runs the unit tests without test coverage."""
-    tests = unittest.TestLoader().discover("journal/tests", pattern="test*.py")
+    tests = unittest.TestLoader().discover("journalmylife/tests", pattern="test*.py")
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         return 0
     return 1
 
+
+if __name__ == '__main__':
+    manager.run()

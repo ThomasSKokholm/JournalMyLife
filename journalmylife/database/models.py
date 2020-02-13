@@ -39,7 +39,7 @@ class Journal(db.Model):
     journalcontent = db.Column(db.Text, nullable=False)
     #journalowner = db.Column(db.User, nullable=False)
     journalcreated = db.Column(db.DateTime, nullable=False)
-    journalstatus = db.Column(db.String(255, nullable=False)
+    journalstatus = db.Column(db.String(255), nullable=False)
 
     def __init__(self, journalcontent, journalowner, journalcreated, journalstatus):
         self.journalcreated = datetime.datetime.now()
