@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
+import datetime
 
 from journalmylife.journal import db
 from journalmylife.database.models import User
@@ -13,7 +14,10 @@ class TestUserModel(BaseTestCase):
     def test_encode_auth_token(self):
         user = User(
             email='test@test.com',
-            password='test'
+            password='test',
+            firstname='Test',
+            lastname='Tester',
+            birthday=datetime.datetime.utcnow() - datetime.timedelta(days=6570, seconds=5)
         )
         db.session.add(user)
         db.session.commit()

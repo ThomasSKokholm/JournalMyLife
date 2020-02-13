@@ -4,7 +4,7 @@
 import jwt
 import datetime
 
-from journalmylife.journal import app, db#, bcrypt
+from journalmylife.journal import app, db, bcrypt
 
 class User(db.Model):
     """ User Model for keeping track of whos who """
