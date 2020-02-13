@@ -40,6 +40,17 @@ def test():
         return 0
     return 1
 
+@manager.command
+def create_db():
+    """Creates all the db tables."""
+    db.create_all()
+
+
+@manager.command
+def drop_db():
+    """Drops all the db tables."""
+    db.drop_all()
+
 
 if __name__ == '__main__':
     manager.run()

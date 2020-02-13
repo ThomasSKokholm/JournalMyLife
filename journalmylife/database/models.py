@@ -38,6 +38,7 @@ class Journal(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     journalcontent = db.Column(db.Text, nullable=False)
     #journalowner = db.Column(db.User, nullable=False)
+    # ForeignKey("users.id")
     journalcreated = db.Column(db.DateTime, nullable=False)
     journalstatus = db.Column(db.String(255), nullable=False)
 

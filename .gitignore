@@ -199,4 +199,6 @@ settings.json
 # Ignore all local history of files
 .history
 
+migrations
+
 # End of https://www.gitignore.io/api/vim,flask,python,visualstudiocode
