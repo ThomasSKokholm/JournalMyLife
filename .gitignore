@@ -200,5 +200,9 @@ settings.json
 .history
 
 migrations
+*.db
+*.sqlite
+*.coverage
+
 
 # End of https://www.gitignore.io/api/vim,flask,python,visualstudiocode

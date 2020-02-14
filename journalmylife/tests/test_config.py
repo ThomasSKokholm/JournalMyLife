@@ -24,6 +24,7 @@ class TestAppConfig(TestCase):
 		return app
 		
 	def test_config(self):
+		self.assertFalse(app.config['SECRET_KEY'] is 'my_precious')
 		self.assertTrue(app.config['DEBUG'] is True)
 		self.assertFalse(current_app is None)
 		self.assertTrue(
@@ -36,6 +37,7 @@ class TestDevConfig(TestCase):
 		return app
 
 	def test_dev_config(self):
+		self.assertFalse(app.config['SECRET_KEY'] is 'my_precious')
 		self.assertTrue(app.config['DEBUG'] is True)
 		self.assertTrue(app.config['BCRYPT_LOG_ROUNDS'] == 4)
 		self.assertTrue(
