@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-import jwt
+#import jwt
+from jose import jwt
 import datetime
 
 from journalmylife.journal import app, db, bcrypt
@@ -55,14 +56,15 @@ class User(db.Model):
         """
         Decodes the auth token
         :param auth_token:
-        :return: integer|string
+        :return: integer|string|bytes
         """
         try:
-            payload = jwt.decode(auth_token, app.config.get('SECRET_key'))
+            payload = jwt.decode(auth_token, app.config.get('SECRET_key'), algorithms=['HS256'])
             return payload['sub']
         except jwt.ExpiredSignatureError:
             return 'Signature expired. Please log in again.'
-        except jwt.InvalidTokenError:
+        #except jwt.InvalidTokenError:
+        except jwt.JWSError:
             return 'Invalid token. Please log in again.'
 
 
