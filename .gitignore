@@ -206,5 +206,15 @@ migrations
 *.sqlite
 *.coverage
 
+### Code ###
+.vscode/*
+.vscode/tasks.json
+.vscode/launch.json
+*.code-workspace
+
+### vscode ###
+.vscode/settings.json
+!.vscode/extensions.json
+
 
 # End of https://www.gitignore.io/api/vim,flask,python,visualstudiocode

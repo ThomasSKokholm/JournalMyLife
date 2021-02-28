@@ -19,7 +19,7 @@ Give examples
 1. (optional)Set up MySQL|Not needed, can use an locale sqlite3.db in working folder.
 1a. python -m venv venv | For runing it in an virtual environment.
 2. pip install -r requirements.txt
-3. source venv/bin/activate
+3. source venv/bin/activate OR source venv/Scripts/activate
 ```
 
 ## Running the tests
