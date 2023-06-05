@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
+        <title>ToDo App 2023</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="static/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.js"></script>
+    </head>
+
+    <body>
+        <div style="margin-top: 50px;" class="ui container">
+            <h1 class="ui center aligned header">ToDo App 2023</h1>
+
+            <form class="ui form" action="/add" method="post">
+                <div class="field">
+                    <label>Todo title</label>
+                    <input type="text" name="title" placeholder="Enter todo..."><br>
+                </div>
+                <button class="ui blue button" type="submit">Add</button>
+            </form>
+
+            <hr>
+
+             {% for todo in todo_list %}
+            <div class="ui segment">
+                <p class="ui big header">{{ todo.id }} | {{ todo.title }}</p>
+
+                {% if todo.complete == False %}
+                <span class="ui grey label">Not Complete</span>
+                {% else %}
+                <span class="ui green label">Complete</span>
+                {% endif %}
+
+                <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+                <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>

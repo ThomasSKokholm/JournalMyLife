@@ -1,5 +1,5 @@
 
-https://scotch.io/tutorials/build-a-crud-web-app-with-python-and-flask-part-one
+[This tutorial is out of date and no longer maintained.](https://scotch.io/tutorials/build-a-crud-web-app-with-python-and-flask-part-one)
 
 https://overiq.com/flask-101/application-structure-and-blueprint-in-flask/
 
