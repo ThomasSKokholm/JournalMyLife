@@ -1,10 +1,10 @@
-from Flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class Todo(db.Model):
@@ -14,8 +14,31 @@ class Todo(db.Model):
 
 db.create_all()
 
+# @app.get('/')
 @app.route('/')
 def home():
     todo_list = db.session.query(Todo).all()
     return render_template('base.html', todo_list=todo_list)
     #return "Hej verden! 😎🌍" # render_template('index.html')
+
+@app.post('/add', methods=['POST'])
+def add():
+    title = request.form.get('title')
+    new_todo = Todo(title=title, complete=False)
+    db.session.add(new_todo)
+    db.session.commit()
+    return redirect(url_for('home'))
+
+@app.get('/update/<int:todo_id>')
+def update(todo_id):
+    todo = db.session.query(Todo).filter_by(id=todo_id).first()
+    todo.complete = not todo.complete
+    db.session.commit()
+    return redirect(url_for('home'))
+
+@app.get('/delete/<int:todo_id>')
+def delete(todo_id):
+    todo = db.session.query(Todo).filter_by(id=todo_id).first()
+    db.session.delete(todo)
+    db.session.commit()
+    return redirect(url_for('home'))
