@@ -12,16 +12,17 @@ class Todo(db.Model):
     title = db.Column(db.String(100))
     complete = db.Column(db.Boolean)
 
-db.create_all()
+with app.app_context():
+    db.create_all()
 
-# @app.get('/')
-@app.route('/')
+# @app.route('/', methods=['GET'])
+@app.get('/')
 def home():
     todo_list = db.session.query(Todo).all()
     return render_template('base.html', todo_list=todo_list)
     #return "Hej verden! 😎🌍" # render_template('index.html')
 
-@app.post('/add', methods=['POST'])
+@app.route('/add', methods=['POST'])
 def add():
     title = request.form.get('title')
     new_todo = Todo(title=title, complete=False)
@@ -42,3 +43,6 @@ def delete(todo_id):
     db.session.delete(todo)
     db.session.commit()
     return redirect(url_for('home'))
+
+if __name__ == '__main__':
+    app.run()
