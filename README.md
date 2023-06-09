@@ -18,9 +18,31 @@ Give examples
 ```
 1. (optional)Set up MySQL|Not needed, can use an locale sqlite3.db in working folder.
 1a. python -m venv venv | For runing it in an virtual environment.
-2. pip install -r requirements.txt
-3. source venv/bin/activate OR source venv/Scripts/activate
+2. pip install -r requirements.txt  | OR use pipreqs
+3. source venv/bin/activate OR source venv/Scripts/activate OR  .\venv\Scripts\Activate.ps1
+
+python.exe -m pip install --upgrade pip
+
 ```
+pip install flask-sqlalchemy
+pip install --only-binary :all: mysqlclient
+pip install flask-login
+pip install flask-migrate
+pip install Flask-WTF
+pip install flask-bootstrap
+
+pip install pipreqs
+pipreqs ./ --encoding=utf-8
+
+pip install coverage
+pip install Flask-Script
+
+### Broken ###
+
+since flask 2.0.0 and Flask-Script kinda broke this project, DONT USE, not working atm, use flask 1.1.2, if trying to run this project!
+manage.py <- y'll get ModuleNotFoundError: No module named 'flask._compat'
+[](https://stackoverflow.com/questions/67538056/flask-script-from-flask-compat-import-text-type-modulenotfounderror-no-module)
+
 
 ## Running the tests
 

@@ -65,3 +65,7 @@ removedd Mako==1.2.4
     jinja2 3.1.2 depends on MarkupSafe>=2.0
     werkzeug 2.3.3 depends on MarkupSafe>=2.1.1
 
+https://stackoverflow.com/questions/26866147/mysql-python-install-error-cannot-open-include-file-config-win-h
+
+
+[](https://stackoverflow.com/questions/67538056/flask-script-from-flask-compat-import-text-type-modulenotfounderror-no-module)
