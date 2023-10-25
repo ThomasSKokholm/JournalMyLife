@@ -8,4 +8,4 @@ flask_testing==0.8.1
 jose==1.0.0
 python-dotenv==1.0.0
 Werkzeug==2.3.4
-Werkzeug==2.3.6
+Werkzeug==3.0.1
