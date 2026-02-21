@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "journalmylifePrototype", "journalmylifePrototype", "{97627E68-0E14-557E-D353-3ABA64DC8639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JournalFileNameFixer", "journalmylifePrototype\JournalFileNameFixer\JournalFileNameFixer.csproj", "{74730B70-64ED-D29A-3216-C167D036ED08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewJournalTemplate", "journalmylifePrototype\NewJournalTemplate\NewJournalTemplate.csproj", "{17C512AC-EED2-0BB3-E7EE-BA49779575BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74730B70-64ED-D29A-3216-C167D036ED08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74730B70-64ED-D29A-3216-C167D036ED08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74730B70-64ED-D29A-3216-C167D036ED08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74730B70-64ED-D29A-3216-C167D036ED08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17C512AC-EED2-0BB3-E7EE-BA49779575BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C512AC-EED2-0BB3-E7EE-BA49779575BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C512AC-EED2-0BB3-E7EE-BA49779575BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17C512AC-EED2-0BB3-E7EE-BA49779575BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74730B70-64ED-D29A-3216-C167D036ED08} = {97627E68-0E14-557E-D353-3ABA64DC8639}
+		{17C512AC-EED2-0BB3-E7EE-BA49779575BF} = {97627E68-0E14-557E-D353-3ABA64DC8639}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {007B155F-2AA9-49BC-869C-8750625E18E1}
+	EndGlobalSection
+EndGlobal
